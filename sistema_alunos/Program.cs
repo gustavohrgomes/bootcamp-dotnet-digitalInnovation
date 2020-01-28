@@ -41,9 +41,32 @@ namespace sistema_alunos
 
                case "2":
 
+                  foreach (var a in alunos){
+                     if (!string.IsNullOrEmpty(a.Nome)) 
+                     {
+                        Console.WriteLine($"ALUNO: {a.Nome} - NOTA: {a.Nota}");
+                     }
+                  }
+
                   break;
 
                case "3":
+
+                  double notaTotal = 0;
+                  var numAlunos = 0;      
+
+                  for (int i = 0; i < alunos.Length; i++)
+                  {
+                     if (!string.IsNullOrEmpty(alunos[i].Nome))
+                     {
+                        notaTotal += alunos[i].Nota;
+                        numAlunos++;
+                     }
+                  }
+                  
+                  var mediaGeral = notaTotal / numAlunos;
+
+                  Console.WriteLine($"A média geral é: {mediaGeral}");
 
                   break;
 
